@@ -125,3 +125,4 @@ Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
 ## Licencia
 
 Este proyecto está licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
+# zig-zag-2026
