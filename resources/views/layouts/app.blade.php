@@ -25,5 +25,8 @@
 
         <!-- Pie de página -->
         <x-footer />
+        
+        <!-- Livewire Scripts -->
+        @livewireScripts
     </body>
 </html>

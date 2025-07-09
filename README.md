@@ -13,6 +13,7 @@ Este es un proyecto de scaffolding (estructura base) para Laravel 12, configurad
 - **Tailwind CSS 4**: Con modo oscuro/claro gestionado por Alpine.js
 - **Alpine.js**: Para interactividad en el frontend sin dependencias pesadas
 - **Livewire**: Para interfaces dinámicas sin escribir JavaScript
+- **Laravel Livewire Tables**: Tablas dinámicas con ordenación, filtrado y búsqueda
 - **Localización avanzada**: Implementada con mcamara/laravel-localization
 - **SEO optimizado**: Integración con artesaos/seotools para metadatos
 - **Estructura de carpetas optimizada**: Organización clara para un desarrollo escalable
@@ -77,6 +78,26 @@ El proyecto incluye Laravel Breeze para proporcionar un sistema de autenticació
 - **Integración con Tailwind CSS**: Diseño elegante y responsive
 - **Compatibilidad con modo oscuro**: Todas las vistas de autenticación adaptadas al tema claro/oscuro
 - **Integración con localización**: Rutas y textos traducibles en múltiples idiomas
+
+## Laravel Livewire Tables
+
+El proyecto integra el paquete `rappasoft/laravel-livewire-tables` para crear tablas dinámicas con funcionalidades avanzadas:
+
+- **Tablas dinámicas**: Componentes Livewire para mostrar datos tabulares
+- **Ordenación**: Ordenar por cualquier columna en orden ascendente o descendente
+- **Filtrado**: Filtros personalizables para refinar los datos mostrados
+- **Búsqueda**: Búsqueda global en todas las columnas o específica por columna
+- **Paginación**: Control de registros por página con opciones configurables
+- **Selección de columnas**: Permite al usuario mostrar/ocultar columnas según necesidad
+- **Acciones en fila**: Botones de acción personalizables para cada registro
+- **Integración con Tailwind**: Diseño elegante y responsive
+- **Compatibilidad con modo oscuro**: Tablas adaptadas al tema claro/oscuro
+
+Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
+- Filtrado por estado de verificación de email
+- Ordenación por ID, nombre, email y fechas
+- Búsqueda global en todos los campos
+- Botones de acción (Ver, Editar, Eliminar)
 
 ## Componentes incluidos
 
