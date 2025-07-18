@@ -16,6 +16,9 @@ Este es un proyecto de scaffolding (estructura base) para Laravel 12, configurad
 - **Laravel Livewire Tables**: Tablas dinámicas con ordenación, filtrado y búsqueda
 - **Localización avanzada**: Implementada con mcamara/laravel-localization
 - **SEO optimizado**: Integración con artesaos/seotools para metadatos
+- **Laravel Gzip**: Compresión de respuestas HTTP para mejor rendimiento
+- **Gestión de roles y permisos**: Implementada con spatie/laravel-permission
+- **Gestión de actividad**: Implementada con spatie/laravel-activitylog
 - **Estructura de carpetas optimizada**: Organización clara para un desarrollo escalable
 - **Componentes Blade**: Estructura modular con componentes reutilizables
 
