@@ -1,5 +1,6 @@
 import './bootstrap';
 import { setupThemeToggle } from './theme';
+import './chart';
 
 // Inicializar el selector de tema
 document.addEventListener('DOMContentLoaded', () => {

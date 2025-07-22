@@ -109,20 +109,16 @@
                 </div>
             </div>
             
-            <!-- Aquí podemos añadir gráficos en el futuro -->
+            <!-- Gráficos con Chart.js y Livewire -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <div class="bg-white bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
                     <h3 class="text-lg text-gray-800 dark:text-white font-semibold mb-4">Distribución por Rol</h3>
-                    <div class="h-64 flex items-center justify-center">
-                        <p class="text-gray-800 dark:text-white opacity-60">Gráfico de distribución por rol (próximamente)</p>
-                    </div>
+                    <livewire:charts.role-distribution-chart />
                 </div>
                 
-                <div class="bg-white bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
                     <h3 class="text-lg text-gray-800 dark:text-white font-semibold mb-4">Contactos por Día</h3>
-                    <div class="h-64 flex items-center justify-center">
-                        <p class="text-gray-800 dark:text-white opacity-60">Gráfico de contactos por día (próximamente)</p>
-                    </div>
+                    <livewire:charts.contacts-per-day-chart />
                 </div>
             </div>
         </div>
