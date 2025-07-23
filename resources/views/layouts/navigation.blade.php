@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-light dark:bg-dark">
+<nav x-data="{ open: false }" class="bg-slate dark:bg-slate">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200 hover:text-coral hover:dark:text-purple transition duration-150 ease-in-out" />
+                        <x-application-logo class="block h-9 w-auto fill-current text-secondary hover:text-accent transition duration-150 ease-in-out" />
                     </a>
                 </div>
 
@@ -25,7 +25,7 @@
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-theme-selector align="right" width="36">
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-dark hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-secondary/70 bg-primary hover:text-secondary focus:outline-none transition ease-in-out duration-150">
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" class="dark:hidden" />
@@ -35,7 +35,7 @@
                             </button>
                         </x-slot>
                         <x-slot name="content">
-                            <button onclick="toggleTheme()" class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out">
+                            <button onclick="toggleTheme()" class="block w-full px-4 py-2 text-left text-sm leading-5 text-secondary hover:bg-secondary/10 focus:outline-none focus:bg-secondary/10 transition duration-150 ease-in-out">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -55,7 +55,7 @@
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-language-selector align="right" width="32">
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-dark hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-secondary/70 bg-primary hover:text-secondary focus:outline-none transition ease-in-out duration-150">
                                 <div>{{ strtoupper(app()->getLocale()) }}</div>
 
                                 <div class="ms-1">
@@ -68,7 +68,7 @@
 
                         <x-slot name="content">
                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                <a class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <a class="block w-full px-4 py-2 text-left text-sm leading-5 text-secondary hover:bg-secondary/10 bg-primary focus:outline-none focus:bg-secondary/10 transition duration-150 ease-in-out" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     {{ strtoupper($localeCode) }}
                                 </a>
                             @endforeach
@@ -80,7 +80,7 @@
                     @auth
                     <x-dropdown align="right" width="24">
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-dark hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-secondary/70 bg-primary hover:text-secondary focus:outline-none focus:bg-secondary/10 transition ease-in-out duration-150">
                                 <div>{{ Auth::user()->name }}</div>
 
                                 <div class="ms-1">
@@ -93,7 +93,7 @@
 
                         <x-slot name="content">
                             <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
+                                {{ __('profile.profile.title') }}
                             </x-dropdown-link>
 
                             <!-- Authentication -->
@@ -110,8 +110,8 @@
                     </x-dropdown>
                     @else
                     <div class="space-x-4">
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">{{ __('Iniciar sesión') }}</a>
-                        <a href="{{ route('register') }}" class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">{{ __('Registrarse') }}</a>
+                        <a href="{{ route('login') }}" class="text-sm text-secondary/70 hover:text-secondary focus:outline-none focus:bg-secondary/10 transition ease-in-out duration-150">{{ __('Iniciar sesión') }}</a>
+                        <a href="{{ route('register') }}" class="text-sm text-secondary/70 hover:text-secondary focus:outline-none focus:bg-secondary/10 transition ease-in-out duration-150">{{ __('Registrarse') }}</a>
                     </div>
                     @endauth
                 </div>
@@ -178,7 +178,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('profile.profile.title') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

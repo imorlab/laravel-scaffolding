@@ -4,7 +4,7 @@
     x-on:keydown.escape.window="isOpen = false"
     x-cloak
 >
-    <div class="fixed inset-0 bg-gray-900 bg-opacity-50 z-40" x-on:click="isOpen = false"></div>
+    <div class="fixed inset-0 bg-gray-900/30 z-40" x-on:click="isOpen = false"></div>
 
     <div
         class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-gray-800 shadow-xl z-50 transform transition-transform duration-300 ease-in-out"

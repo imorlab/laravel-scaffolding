@@ -1,16 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-tertiary: var(--tertiary);
+    --color-quaternary: var(--quaternary);
+    --color-quinary: var(--quinary);
+    --color-accent: var(--accent);
+}
 
 /* Definición de colores personalizados */
 :root {
-    --color-light: #F8F7F7;
-    --color-dark: #1D1E1E;
-    --color-beige: #D8C1AB;
-    --color-coral: #F7896F;
-    --color-blue: #0D5BCE;
-    --color-green: #16C178;
-    --color-purple: #C300FF;
+    --color-primary: #E4E8EF;
+    --color-secondary: #10172B;
+    --color-tertiary: #E4E8EF;
+    --color-quaternary: #E4E8EF;
+    --color-quinary: #E4E8EF;
+    --color-accent: #8200DB;
+}
+
+.dark {
+    --color-primary: #10172B;
+    --color-secondary: #E4E8EF;
+    --color-tertiary: #10172B;
+    --color-quaternary: #10172B;
+    --color-quinary: #10172B;
+    --color-accent: #8200DB;
 }
 
 /* Configuración de fuentes personalizadas */

@@ -64,22 +64,12 @@ class UsersTable extends DataTableComponent
                     ];
                 })
                 ->buttons([
-                    LinkColumn::make('Ver')
-                        ->title(fn($row) => 'Ver')
-                        ->location(fn($row) => '#') 
-                        ->attributes(function($row) {
-                            return [
-                                'class' => 'btn btn-sm btn-info text-white',
-                                'wire:click' => '$dispatch(\'showUserSidebar\', { action: \'view\', userId: ' . $row->id . ' })',
-                                'href' => '#',
-                            ];
-                        }),
                     LinkColumn::make('Editar')
                         ->title(fn($row) => 'Editar')
                         ->location(fn($row) => '#')
                         ->attributes(function($row) {
                             return [
-                                'class' => 'btn btn-sm btn-warning text-white',
+                                'class' => 'text-orange-500',
                                 'wire:click' => '$dispatch(\'showUserSidebar\', { action: \'edit\', userId: ' . $row->id . ' })',
                                 'href' => '#',
                             ];
@@ -89,7 +79,7 @@ class UsersTable extends DataTableComponent
                         ->location(fn($row) => '#')
                         ->attributes(function($row) {
                             return [
-                                'class' => 'btn btn-sm btn-danger text-white',
+                                'class' => 'text-red-500',
                                 'wire:click' => '$dispatch(\'showUserSidebar\', { action: \'delete\', userId: ' . $row->id . ' })',
                                 'href' => '#',
                             ];

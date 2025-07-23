@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('partials.head')
 </head>
-<body class="font-sans antialiased">
-    <div id="app" class="min-h-screen bg-white dark:bg-gray-800">
+<body class="font-sans antialiased bg-primary">
+    <div id="app" class="min-h-screen">
         <!-- Admin Sidebar Navigation -->
         <div x-data="{ sidebarOpen: true, sidebarCollapsed: false }" class="flex h-screen overflow-hidden">
             <!-- Mobile Sidebar Overlay -->
             <div x-show="sidebarOpen"
-                 class="fixed inset-0 z-40 bg-white dark:bg-gray-800/50 transition-opacity duration-300 ease-in-out lg:hidden"
+                 class="fixed inset-0 z-40 bg-primary/50 transition-opacity duration-300 ease-in-out lg:hidden"
                  @click="sidebarOpen = false"
                  x-transition.opacity>
             </div>
 
             <!-- Sidebar -->
-            <div class="fixed inset-y-0 left-0 z-50 bg-white dark:bg-gray-800 transform transition-all duration-300 ease-in-out lg:relative flex flex-col h-full"
+            <div class="fixed inset-y-0 left-0 z-50 bg-primary transform transition-all duration-300 ease-in-out lg:relative flex flex-col h-full"
                  :class="{
                     'translate-x-0 w-64': (sidebarOpen && !sidebarCollapsed) || (window.innerWidth >= 1024 && !sidebarCollapsed),
                     '-translate-x-full w-64': !sidebarOpen && !sidebarCollapsed && window.innerWidth < 1024,
@@ -23,7 +23,7 @@
                     '-translate-x-full w-20': !sidebarOpen && window.innerWidth < 1024 && sidebarCollapsed
                  }">
                 <!-- Logo -->
-                <div class="h-16 flex items-center px-4 py-16 border-b border-beige/20">
+                <div class="h-16 flex items-center px-4 py-16 border-b border-gray-200/20">
                     <div class="flex items-center w-full">
                         <a href="{{ route('dashboard') }}" class="text-xl font-bold lg:mx-auto" :class="{'lg:mx-auto': !sidebarCollapsed, 'mx-auto': sidebarCollapsed}">
                             <!-- Logo que se muestra cuando la barra lateral está expandida -->
@@ -56,7 +56,7 @@
                 <!-- Botón para colapsar/expandir el sidebar (solo visible en desktop) -->
                 <button 
                     @click="sidebarCollapsed = !sidebarCollapsed" 
-                    class="hidden lg:flex items-center justify-center h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 dark:text-gray-400 dark:hover:text-gray-300 text-gray-500 hover:text-gray-800 absolute -right-5 top-20 transform translate-x-0 shadow-md z-50">
+                    class="hidden lg:flex items-center justify-center h-10 w-10 rounded-full bg-primary dark:text-gray-400 dark:hover:text-gray-300 text-gray-500 hover:text-gray-800 absolute -right-5 top-20 transform translate-x-0 shadow-md z-50">
                     <svg x-show="!sidebarCollapsed" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
                     </svg>
@@ -72,7 +72,7 @@
                        class="group flex items-center px-2 py-2.5 text-sm font-medium rounded-lg transition duration-150 ease-in-out
                        {{ request()->routeIs('dashboard')
                           ? 'bg-gray-500/50 text-gray-800 dark:text-white'
-                          : 'text-gray-800 dark:text-white hover:bg-gray-500/50 hover:text-coral' }}">
+                          : 'text-gray-800 dark:text-white hover:bg-gray-500/20 hover:text-coral' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#16C178" class="size-6 mr-2" :class="{'mr-2': !sidebarCollapsed, 'mr-0 mx-auto': sidebarCollapsed}">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" />
                         </svg>
@@ -84,7 +84,7 @@
                        class="group flex items-center px-2 py-2.5 text-sm font-medium rounded-lg transition duration-150 ease-in-out
                        {{ request()->is('*users*')
                           ? 'bg-gray-500/50 text-gray-800 dark:text-white'
-                          : 'text-gray-800 dark:text-white hover:bg-gray-500/50 hover:text-coral' }}">
+                          : 'text-gray-800 dark:text-white hover:bg-gray-500/20 hover:text-coral' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0D5BCE" class="size-6 mr-2" :class="{'mr-2': !sidebarCollapsed, 'mr-0 mx-auto': sidebarCollapsed}">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                         </svg>
@@ -96,7 +96,7 @@
                        class="group flex items-center px-2 py-2.5 text-sm font-medium rounded-lg transition duration-150 ease-in-out
                        {{ request()->has('stats')
                           ? 'bg-gray-500/50 text-gray-800 dark:text-white'
-                          : 'text-gray-800 dark:text-white hover:bg-gray-500/50 hover:text-coral' }}">
+                          : 'text-gray-800 dark:text-white hover:bg-gray-500/20 hover:text-coral' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F7896F" class="size-6 mr-2" :class="{'mr-2': !sidebarCollapsed, 'mr-0 mx-auto': sidebarCollapsed}">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
                         </svg>
@@ -106,7 +106,7 @@
                 
 
                 <!-- User Menu -->
-                <div class="mt-auto w-full border-t border-beige/20">
+                <div class="mt-auto w-full border-t border-gray-200/20">
                     <div class="px-4 py-4" x-data="{ open: false }" @click.away="open = false">
                         <button @click="open = !open" class="flex items-center w-full text-sm font-medium text-gray-800 dark:text-white hover:text-coral" :class="{'justify-center': sidebarCollapsed}">
                             <img class="h-8 w-8 rounded-full" :class="{'mr-3': !sidebarCollapsed}" src="https://ui-avatars.com/api/?name={{ auth()->user()->name }}" alt="">
@@ -167,12 +167,12 @@
 
                 <!-- Page Content -->
                 <main class="flex-1 overflow-x-hidden overflow-y-auto">
-                    <div class="w-full min-h-screen max-w-8xl mx-auto py-6 px-4 sm:px-6 lg:px-8 items-center justify-center bg-gradient-to-br from-gray-300 via-gray-400 to-gray-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+                    <div class="w-full min-h-screen max-w-8xl mx-auto py-6 px-4 sm:px-6 lg:px-8 items-center justify-center bg-gradient-to-br from-slate-300 via-slate-400 to-slate-300 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
                         <!-- Theme Selector -->
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <x-theme-selector align="left" width="36">
                                 <x-slot name="trigger">
-                                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-primary hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" class="dark:hidden" />
