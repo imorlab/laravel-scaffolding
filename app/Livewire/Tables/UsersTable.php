@@ -66,10 +66,12 @@ class UsersTable extends DataTableComponent
                 ->buttons([
                     LinkColumn::make('Ver')
                         ->title(fn($row) => 'Ver')
-                        ->location(fn($row) => '#')
+                        ->location(fn($row) => '#') 
                         ->attributes(function($row) {
                             return [
                                 'class' => 'btn btn-sm btn-info text-white',
+                                'wire:click' => '$dispatch(\'showUserSidebar\', { action: \'view\', userId: ' . $row->id . ' })',
+                                'href' => '#',
                             ];
                         }),
                     LinkColumn::make('Editar')
@@ -78,6 +80,8 @@ class UsersTable extends DataTableComponent
                         ->attributes(function($row) {
                             return [
                                 'class' => 'btn btn-sm btn-warning text-white',
+                                'wire:click' => '$dispatch(\'showUserSidebar\', { action: \'edit\', userId: ' . $row->id . ' })',
+                                'href' => '#',
                             ];
                         }),
                     LinkColumn::make('Eliminar')
@@ -86,7 +90,8 @@ class UsersTable extends DataTableComponent
                         ->attributes(function($row) {
                             return [
                                 'class' => 'btn btn-sm btn-danger text-white',
-                                'x-on:click' => "window.dispatchEvent(new CustomEvent('triggerDelete', { detail: { id: {$row->id} } }))",
+                                'wire:click' => '$dispatch(\'showUserSidebar\', { action: \'delete\', userId: ' . $row->id . ' })',
+                                'href' => '#',
                             ];
                         }),
                 ]),

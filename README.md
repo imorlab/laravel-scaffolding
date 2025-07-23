@@ -19,6 +19,7 @@ Este es un proyecto de scaffolding (estructura base) para Laravel 12, configurad
 - **Laravel Gzip**: Compresión de respuestas HTTP para mejor rendimiento
 - **Gestión de roles y permisos**: Implementada con spatie/laravel-permission
 - **Gestión de actividad**: Implementada con spatie/laravel-activitylog
+- **Depuración**: Implementada con barryvdh/laravel-debugbar
 - **Estructura de carpetas optimizada**: Organización clara para un desarrollo escalable
 - **Componentes Blade**: Estructura modular con componentes reutilizables
 
@@ -128,4 +129,4 @@ Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
 ## Licencia
 
 Este proyecto está licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
-# zig-zag-2026
+# laravel-scaffolding-2026

@@ -12,6 +12,8 @@
                     <h3 class="text-lg font-medium mb-4">{{ __('Gestión de Usuarios') }}</h3>
                     
                     <livewire:tables.users-table />
+
+                    <livewire:admin.user-sidebar />
                 </div>
             </div>
         </div>

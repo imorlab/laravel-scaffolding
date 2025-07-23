@@ -24,7 +24,7 @@
     /* Estilos para Firefox */
     * {
         scrollbar-width: thin;
-        scrollbar-color: var(--color-purple) var(--color-dark);
+        scrollbar-color: #222A3D #111827;
     }
 
     /* Estilos para Chrome, Edge, y Safari */
@@ -39,13 +39,13 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: var(--color-purple);
+        background-color: #111827;
         border-radius: 9999px; /* rounded-full */
         border: 2px solid transparent;
         background-clip: padding-box;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background-color: var(--color-purple);
+        background-color: #111827;
     }
 }

@@ -16,13 +16,13 @@
                 <!-- Burbujas de lava -->
                 <div class="absolute inset-0">
                     <div class="absolute w-[150%] aspect-square -left-1/4 animate-lava-1">
-                        <div class="absolute inset-0 bg-gradient-to-br from-[#48077A] to-transparent rounded-full blur-3xl opacity-80"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#48077A] to-transparent rounded-full blur-xl opacity-80"></div>
                     </div>
                     <div class="absolute w-[150%] aspect-square -right-1/4 animate-lava-2">
-                        <div class="absolute inset-0 bg-gradient-to-tl from-[#631C96] to-transparent rounded-full blur-3xl opacity-80"></div>
+                        <div class="absolute inset-0 bg-gradient-to-tl from-[#631C96] to-transparent rounded-full blur-xl opacity-80"></div>
                     </div>
                     <div class="absolute w-[120%] aspect-square -top-1/4 animate-lava-3">
-                        <div class="absolute inset-0 bg-gradient-to-b from-[#240141] to-transparent rounded-full blur-3xl opacity-70"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-[#240141] to-transparent rounded-full blur-xl opacity-70"></div>
                     </div>
                 </div>
             </div>

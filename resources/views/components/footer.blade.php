@@ -3,9 +3,9 @@
     'copyrightText' => config('app.name', 'Laravel')
 ])
 
-<footer class="bg-coral dark:bg-beige dark:text-gray-900 rounded-t-[2rem] shadow mt-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="text-center text-sm text-dark dark:text-dark">
+<footer class="pt-12 pb-6">
+    <div class="relative w-[95dvw] min-h-[10dvh] mx-auto flex items-center justify-center bg-gray-300/70 dark:bg-gray-600/70 dark:text-gray-900 rounded-[2rem] shadow">
+        <div class="text-center text-sm text-gray-900 dark:text-gray-400">
             @if($showCopyright)
                 &copy; {{ date('Y') }} {{ $copyrightText }}
             @endif
