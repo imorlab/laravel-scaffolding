@@ -115,18 +115,109 @@ Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
 
 - PHP 8.2 o superior
 - Composer
-- Node.js y NPM
+- Node.js 18.0 o superior
+- NPM
 
 ## Instalación
 
-1. Clona este repositorio
-2. Ejecuta `composer install`
-3. Ejecuta `npm install`
-4. Copia `.env.example` a `.env` y configura tus variables de entorno
-5. Ejecuta `php artisan key:generate`
-6. Ejecuta `npm run dev` para desarrollo o `npm run build` para producción
+### Instalación Automática ⚡ (Recomendada)
+
+Simplemente clona el repositorio y ejecuta el script de instalación:
+
+```bash
+git clone https://github.com/Beon-World-Wide/laravel-scaffolding-2026.git
+cd laravel-scaffolding-2026
+chmod +x install.sh
+./install.sh
+```
+
+**Alternativamente**, también puedes usar npm:
+```bash
+git clone https://github.com/Beon-World-Wide/laravel-scaffolding-2026.git
+cd laravel-scaffolding-2026
+npm run setup
+```
+
+El script automáticamente:
+- ✅ Verifica que tengas todas las dependencias instaladas
+- ✅ Instala dependencias de PHP con `composer install`
+- ✅ Instala dependencias de Node.js con `npm install`
+- ✅ Crea el archivo `.env` desde `.env.example`
+- ✅ Genera la clave de aplicación con `php artisan key:generate`
+- ✅ Te pregunta si quieres compilar assets para producción
+
+### Instalación Manual
+
+Si prefieres hacerlo paso a paso:
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/Beon-World-Wide/laravel-scaffolding-2026.git
+   cd laravel-scaffolding-2026
+   ```
+
+2. Instala dependencias de PHP:
+   ```bash
+   composer install
+   ```
+
+3. Instala dependencias de Node.js:
+   ```bash
+   npm install
+   ```
+
+4. Configura el entorno:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+5. Configura tu base de datos en el archivo `.env`
+
+6. Ejecuta las migraciones:
+   ```bash
+   php artisan migrate
+   ```
+
+7. (Opcional) Ejecuta los seeders para datos de prueba:
+   ```bash
+   php artisan db:seed
+   ```
+
+8. Compila los assets:
+   ```bash
+   npm run dev    # Para desarrollo
+   npm run build  # Para producción
+   ```
+
+9. Inicia el servidor:
+   ```bash
+   php artisan serve
+   ```
+
+¡Tu aplicación estará disponible en `http://localhost:8000`! 🚀
+
+## Comandos útiles
+
+```bash
+# Desarrollo
+npm run dev              # Inicia Vite en modo desarrollo
+php artisan serve       # Inicia el servidor PHP
+
+# Producción
+npm run build           # Compila assets para producción
+
+# Base de datos
+php artisan migrate     # Ejecuta migraciones
+php artisan db:seed     # Ejecuta seeders
+php artisan migrate:fresh --seed  # Refresca BD y ejecuta seeders
+
+# Caché
+php artisan cache:clear    # Limpia caché
+php artisan config:clear   # Limpia caché de configuración
+php artisan route:clear    # Limpia caché de rutas
+```
 
 ## Licencia
 
 Este proyecto está licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
-# laravel-scaffolding-2026

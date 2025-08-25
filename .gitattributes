@@ -1,10 +1,17 @@
 * text=auto eol=lf
 
+# Laravel files
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
+
+# Scripts should be executable
+*.sh text eol=lf
+*.bat text eol=crlf
+scripts/*.js text eol=lf
+Makefile text eol=lf
 
 /.github export-ignore
 CHANGELOG.md export-ignore
