@@ -119,7 +119,32 @@ Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
 - Node.js 18.0 o superior
 - NPM
 
+
+## 🐳 Docker
+
+El proyecto está completamente dockerizado para facilitar el desarrollo y despliegue. Incluye servicios para la aplicación Laravel, base de datos MySQL, Redis, Nginx y phpMyAdmin.
+
+### Inicio rápido con Docker
+
+```bash
+# Iniciar todos los servicios
+docker compose up -d
+
+# O usar el script automatizado
+./docker-setup.sh
+```
+
+**Servicios disponibles:**
+- **Aplicación**: http://localhost:8000
+- **phpMyAdmin**: http://localhost:8080
+- **Base de datos MySQL**: localhost:3307
+
+📖 **Para más detalles sobre la configuración Docker, consulta la [Guía completa de Docker](DOCKER_GUIDE.md)**
+
+
 ## Instalación
+
+Hay dos formas de instalar el proyecto: automáticamente con un script o manualmente paso a paso.
 
 ### Instalación Automática ⚡ (Recomendada)
 
@@ -197,27 +222,6 @@ Si prefieres hacerlo paso a paso:
    ```
 
 ¡Tu aplicación estará disponible en `http://localhost:8000`! 🚀
-
-## 🐳 Docker
-
-El proyecto está completamente dockerizado para facilitar el desarrollo y despliegue. Incluye servicios para la aplicación Laravel, base de datos MySQL, Redis, Nginx y phpMyAdmin.
-
-### Inicio rápido con Docker
-
-```bash
-# Iniciar todos los servicios
-docker compose up -d
-
-# O usar el script automatizado
-./docker-setup.sh
-```
-
-**Servicios disponibles:**
-- **Aplicación**: http://localhost:8000
-- **phpMyAdmin**: http://localhost:8080
-- **Base de datos MySQL**: localhost:3307
-
-📖 **Para más detalles sobre la configuración Docker, consulta la [Guía completa de Docker](DOCKER_GUIDE.md)**
 
 
 ## Licencia
