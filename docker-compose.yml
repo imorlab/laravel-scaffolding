@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # Servicio de la aplicación Laravel
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravel-scaffolding
+    container_name: laravel-scaffolding-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - laravel-network
+
+  # Servidor web Nginx
+  webserver:
+    image: nginx:alpine
+    container_name: laravel-scaffolding-webserver
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - laravel-network
+
+  # Base de datos MySQL
+  db:
+    image: mysql:8.0
+    container_name: laravel-scaffolding-db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"  # Usamos puerto 3307 para evitar conflictos
+    environment:
+      MYSQL_DATABASE: laravel_scaffolding
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_PASSWORD: user_password
+      MYSQL_USER: laravel_user
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - laravel-network
+
+  # Servidor de cache Redis
+  redis:
+    image: redis:alpine
+    container_name: laravel-scaffolding-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - laravel-network
+
+  # phpMyAdmin para gestionar la base de datos
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: laravel-scaffolding-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root_password
+    networks:
+      - laravel-network
+
+# Redes Docker
+networks:
+  laravel-network:
+    driver: bridge
+
+# Volúmenes persistentes
+volumes:
+  dbdata:
+    driver: local

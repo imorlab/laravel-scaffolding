@@ -9,6 +9,7 @@ Este es un proyecto de scaffolding (estructura base) para Laravel 12, configurad
 ## Características principales
 
 - **Laravel 12.19.3**: La última versión del framework PHP más elegante
+- **🐳 Docker**: Entorno completamente dockerizado con servicios integrados
 - **Laravel Breeze**: Sistema de autenticación con login, registro y panel de usuario
 - **Tailwind CSS 4**: Con modo oscuro/claro gestionado por Alpine.js
 - **Alpine.js**: Para interactividad en el frontend sin dependencias pesadas
@@ -197,26 +198,27 @@ Si prefieres hacerlo paso a paso:
 
 ¡Tu aplicación estará disponible en `http://localhost:8000`! 🚀
 
-## Comandos útiles
+## 🐳 Docker
+
+El proyecto está completamente dockerizado para facilitar el desarrollo y despliegue. Incluye servicios para la aplicación Laravel, base de datos MySQL, Redis, Nginx y phpMyAdmin.
+
+### Inicio rápido con Docker
 
 ```bash
-# Desarrollo
-npm run dev              # Inicia Vite en modo desarrollo
-php artisan serve       # Inicia el servidor PHP
+# Iniciar todos los servicios
+docker compose up -d
 
-# Producción
-npm run build           # Compila assets para producción
-
-# Base de datos
-php artisan migrate     # Ejecuta migraciones
-php artisan db:seed     # Ejecuta seeders
-php artisan migrate:fresh --seed  # Refresca BD y ejecuta seeders
-
-# Caché
-php artisan cache:clear    # Limpia caché
-php artisan config:clear   # Limpia caché de configuración
-php artisan route:clear    # Limpia caché de rutas
+# O usar el script automatizado
+./docker-setup.sh
 ```
+
+**Servicios disponibles:**
+- **Aplicación**: http://localhost:8000
+- **phpMyAdmin**: http://localhost:8080
+- **Base de datos MySQL**: localhost:3307
+
+📖 **Para más detalles sobre la configuración Docker, consulta la [Guía completa de Docker](DOCKER_GUIDE.md)**
+
 
 ## Licencia
 

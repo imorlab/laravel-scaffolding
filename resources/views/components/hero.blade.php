@@ -1,12 +1,9 @@
-{{-- Hero Section Component --}}
 <header class="relative w-full h-[90dvh] flex items-center justify-center overflow-hidden">
     <div class="w-full h-full mx-auto flex items-center justify-center">
-        <!-- Contenedor lava lamp -->
+
         <div class="relative w-[95dvw] h-[90dvh] rounded-[2rem] overflow-hidden shadow-lg">
             <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900">
-                <!-- Usamos un degradado como fondo en lugar de una imagen -->
-            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"></div>
 
             <!-- Efecto de lava lamp morado -->
             <div class="absolute inset-0">
@@ -36,14 +33,12 @@
                     </a>
                 </div>
 
-                <!-- Título principal -->
                 <h1 class="text-3xl sm:text-4xl lg:text-7xl font-bold mb-4 lg:mb-6 max-w-7xl opacity-80 starting:opacity-0 duration-750 starting:translate-y-4">
                     <span class="text-white leading-tight">
                         {{ __('hero.title') }}
                     </span>
                 </h1>
 
-                <!-- Subtítulo -->
                 <p class="text-lg sm:text-xl lg:text-3xl text-white mb-6 lg:mb-16 max-w-4xl mx-auto leading-relaxed opacity-80 starting:opacity-0 duration-750 starting:translate-y-4">
                     {{ __('hero.subtitle') }}
                 </p>
