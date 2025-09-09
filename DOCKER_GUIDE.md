@@ -2,7 +2,26 @@
 
 Esta guía te ayudará a dockerizar tu proyecto Laravel paso a paso de forma sencilla.
 
-## 📋 Prerrequisitos
+## � Imagen en Docker Hub
+
+La imagen de este proyecto está disponible en Docker Hub: **[imorlab/laravel-scaffolding](https://hub.docker.com/r/imorlab/laravel-scaffolding)**
+
+### Uso rápido de la imagen
+
+```bash
+# Descargar la imagen
+docker pull imorlab/laravel-scaffolding:latest
+
+# Ejecutar solo la aplicación (para pruebas)
+docker run -p 8000:9000 imorlab/laravel-scaffolding:latest
+
+# Ver todas las versiones disponibles
+docker pull imorlab/laravel-scaffolding:v1.0.0
+```
+
+**Nota**: Para un entorno completo con base de datos, es recomendable usar `docker-compose` como se explica más adelante.
+
+## �📋 Prerrequisitos
 
 Antes de comenzar, asegúrate de tener instalado:
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) para Windows

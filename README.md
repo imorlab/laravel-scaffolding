@@ -124,14 +124,31 @@ Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
 
 El proyecto está completamente dockerizado para facilitar el desarrollo y despliegue. Incluye servicios para la aplicación Laravel, base de datos MySQL, Redis, Nginx y phpMyAdmin.
 
+### Imagen en Docker Hub
+
+La imagen está disponible en Docker Hub: **[imorlab/laravel-scaffolding](https://hub.docker.com/r/imorlab/laravel-scaffolding)**
+
+```bash
+# Descargar directamente desde Docker Hub
+docker pull imorlab/laravel-scaffolding:latest
+
+# O usar una versión específica
+docker pull imorlab/laravel-scaffolding:v1.0.0
+```
+
 ### Inicio rápido con Docker
 
 ```bash
-# Iniciar todos los servicios
+# Opción 1: Clonar y usar docker-compose (recomendado para desarrollo)
+git clone https://github.com/Beon-World-Wide/laravel-scaffolding-2026.git
+cd laravel-scaffolding-2026
 docker compose up -d
 
-# O usar el script automatizado
+# Opción 2: Usar el script automatizado
 ./docker-setup.sh
+
+# Opción 3: Usar solo la imagen de Docker Hub (para pruebas rápidas)
+docker run -p 8000:9000 imorlab/laravel-scaffolding:latest
 ```
 
 **Servicios disponibles:**
