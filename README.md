@@ -122,46 +122,60 @@ Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
 
 ## 🐳 Docker
 
-El proyecto está completamente dockerizado para facilitar el desarrollo y despliegue. Incluye servicios para la aplicación Laravel, base de datos MySQL, Redis, Nginx y phpMyAdmin.
+El proyecto está completamente dockerizado para facilitar el desarrollo y despliegue. Incluye servicios para Laravel, MySQL, Redis, Nginx y phpMyAdmin.
 
-### Imagen en Docker Hub
+### 🚀 3 Formas de Usar Docker
 
-La imagen está disponible en Docker Hub: **[imorlab/laravel-scaffolding](https://hub.docker.com/r/imorlab/laravel-scaffolding)**
-
+#### 1️⃣ Docker Hub (Más Rápido) ⭐
 ```bash
-# Descargar directamente desde Docker Hub
-docker pull imorlab/laravel-scaffolding:latest
-
-# Demo rápido (solo páginas estáticas)
-docker run -p 8000:9000 -e APP_KEY=base64:exemplo123 imorlab/laravel-scaffolding:latest
-
-# O usar una versión específica
-docker pull imorlab/laravel-scaffolding:v1.0.0
+# Descargar y ejecutar setup automático
+curl -o docker-hub-setup.sh https://raw.githubusercontent.com/Beon-World-Wide/laravel-scaffolding-2026/main/docker-hub-setup.sh
+chmod +x docker-hub-setup.sh
+./docker-hub-setup.sh
 ```
+**✅ Ideal para**: Demo, testing, producción  
+**⏱️ Tiempo**: 2-3 minutos
 
-### Inicio rápido con Docker
-
+#### 2️⃣ Desarrollo Local  
 ```bash
-# Opción 1: Clonar y usar docker-compose (recomendado - entorno completo)
+# Clonar repositorio y configurar
 git clone https://github.com/Beon-World-Wide/laravel-scaffolding-2026.git
 cd laravel-scaffolding-2026
-docker compose up -d
-
-# Opción 2: Usar el script automatizado
 ./docker-setup.sh
+```
+**✅ Ideal para**: Desarrollo, modificar código  
+**⏱️ Tiempo**: 5-10 minutos
 
-# Opción 3: Demo rápido solo con la imagen
-docker run -p 8000:9000 -e APP_KEY=base64:exemplo123 imorlab/laravel-scaffolding:latest
+#### 3️⃣ Demo Rápido
+```bash
+# Solo para ver la aplicación (sin BD)
+docker run -p 8001:9000 -e APP_KEY=base64:Rq/Rr/mDA1w4vXOpjPOAp3U1vyBZXJpVcjRbcMiDWKE= imorlab/laravel-scaffolding:latest
+```
+**✅ Ideal para**: Preview rápido  
+**⚠️ Limitación**: Solo páginas estáticas
+
+### 🌐 Acceso a Servicios
+
+Después del setup:
+- **🌍 Aplicación Laravel**: http://localhost:8001
+- **🔧 phpMyAdmin**: http://localhost:8080
+- **🗄️ Base de datos MySQL**: localhost:3307
+
+### � Usuarios de Prueba
+```
+📧 admin@admin.com / 🔐 password (Administrador)
+📧 user@user.com / 🔐 password (Usuario)
 ```
 
-**💡 Recomendación**: Para desarrollo completo usa docker-compose. Para demo rápido usa docker run.
+### 📦 Docker Hub
+**Imagen disponible**: [imorlab/laravel-scaffolding](https://hub.docker.com/r/imorlab/laravel-scaffolding)
 
-**Servicios disponibles:**
-- **Aplicación**: http://localhost:8001
-- **phpMyAdmin**: http://localhost:8080
-- **Base de datos MySQL**: localhost:3307
+```bash
+# Descargar imagen
+docker pull imorlab/laravel-scaffolding:latest
+```
 
-📖 **Para más detalles sobre la configuración Docker, consulta la [Guía completa de Docker](DOCKER_GUIDE.md)**
+📖 **Documentación completa**: [Guía Docker](DOCKER_GUIDE.md)
 
 
 ## Instalación
