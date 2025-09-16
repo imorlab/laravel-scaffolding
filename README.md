@@ -139,17 +139,16 @@ docker pull imorlab/laravel-scaffolding:v1.0.0
 ### Inicio rápido con Docker
 
 ```bash
-# Opción 1: Clonar y usar docker-compose (recomendado para desarrollo)
+# Opción 1: Clonar y usar docker-compose (recomendado)
 git clone https://github.com/Beon-World-Wide/laravel-scaffolding-2026.git
 cd laravel-scaffolding-2026
 docker compose up -d
 
 # Opción 2: Usar el script automatizado
 ./docker-setup.sh
-
-# Opción 3: Usar solo la imagen de Docker Hub (para pruebas rápidas)
-docker run -p 8000:9000 imorlab/laravel-scaffolding:latest
 ```
+
+**⚠️ Nota**: La imagen de Docker Hub por sí sola necesita configuración adicional y servicios como base de datos. Usa `docker-compose` para un entorno completo funcional.
 
 **Servicios disponibles:**
 - **Aplicación**: http://localhost:8000

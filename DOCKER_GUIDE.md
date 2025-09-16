@@ -12,12 +12,21 @@ La imagen de este proyecto está disponible en Docker Hub: **[imorlab/laravel-sc
 # Descargar la imagen
 docker pull imorlab/laravel-scaffolding:latest
 
-# Ejecutar solo la aplicación (para pruebas)
-docker run -p 8000:9000 imorlab/laravel-scaffolding:latest
-
-# Ver todas las versiones disponibles
+# Verificar versiones disponibles
 docker pull imorlab/laravel-scaffolding:v1.0.0
 ```
+
+**⚠️ Nota importante**: La imagen por sí sola no incluye base de datos ni otros servicios necesarios. Para un entorno completo funcional, usa `docker-compose` como se explica más adelante.
+
+### ¿Por qué no usar solo `docker run`?
+
+Laravel necesita varios servicios para funcionar correctamente:
+- **Base de datos MySQL**: Para almacenar datos
+- **Redis**: Para cache y sesiones  
+- **Servidor web**: Para servir archivos estáticos
+- **Variables de entorno**: Configuración específica
+
+La imagen de Docker Hub contiene solo la aplicación Laravel, por lo que necesitas los servicios adicionales que proporciona `docker-compose`.
 
 **Nota**: Para un entorno completo con base de datos, es recomendable usar `docker-compose` como se explica más adelante.
 
