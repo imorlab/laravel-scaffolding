@@ -39,7 +39,7 @@ echo "🌱 Ejecutando seeders..."
 docker-compose exec app php artisan db:seed
 
 echo "✅ ¡Docker setup completado!"
-echo "🌐 Tu aplicación está disponible en: http://localhost:8000"
+echo "🌐 Tu aplicación está disponible en: http://localhost:8001"
 echo "🗄️ phpMyAdmin está disponible en: http://localhost:8080"
 echo ""
 echo "Credenciales de la base de datos:"

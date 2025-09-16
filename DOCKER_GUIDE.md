@@ -14,9 +14,15 @@ docker pull imorlab/laravel-scaffolding:latest
 
 # Verificar versiones disponibles
 docker pull imorlab/laravel-scaffolding:v1.0.0
+
+# Ejecutar demo rápido (solo para ver la aplicación)
+docker run -p 8000:9000 -e APP_KEY=base64:exemplo123 imorlab/laravel-scaffolding:latest
 ```
 
-**⚠️ Nota importante**: La imagen por sí sola no incluye base de datos ni otros servicios necesarios. Para un entorno completo funcional, usa `docker-compose` como se explica más adelante.
+**⚠️ Notas importantes**: 
+- El comando `docker run` solo muestra la aplicación sin base de datos (páginas estáticas funcionan)
+- Para un entorno completo con base de datos, usa `docker-compose` como se explica más adelante
+- La imagen se descarga automáticamente la primera vez
 
 ### ¿Por qué no usar solo `docker run`?
 
@@ -118,7 +124,7 @@ docker-compose exec app php artisan db:seed
 
 Una vez completada la configuración:
 
-- **Aplicación Laravel**: http://localhost:8000
+- **Aplicación Laravel**: http://localhost:8001
 - **phpMyAdmin**: http://localhost:8080
   - Servidor: `db`
   - Usuario: `laravel_user`
@@ -306,7 +312,7 @@ docker compose exec app php artisan view:clear
 docker ps
 
 # Probar la conexión a la aplicación
-curl http://localhost:8000
+curl http://localhost:8001
 
 # Ver logs si hay problemas
 docker compose logs app
@@ -319,7 +325,7 @@ docker compose logs db
 
 Una vez que todo esté funcionando, podrás acceder a:
 
-- **Aplicación Laravel**: [http://localhost:8000](http://localhost:8000)
+- **Aplicación Laravel**: [http://localhost:8001](http://localhost:8001)
 - **phpMyAdmin**: [http://localhost:8080](http://localhost:8080)
 - **Base de datos MySQL**: `localhost:3307`
 

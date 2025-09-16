@@ -13,22 +13,26 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crear usuario administrador
-        User::create([
-            'name' => 'Administrador',
-            'email' => 'admin@example.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('password'),
-        ]);
-
-        // Crear usuarios de prueba
-        for ($i = 1; $i <= 20; $i++) {
-            User::create([
-                'name' => 'Usuario ' . $i,
-                'email' => 'usuario' . $i . '@example.com',
-                'email_verified_at' => $i % 2 === 0 ? now() : null,
+        // Crear usuario administrador solo si no existe
+        User::firstOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'name' => 'Administrador',
+                'email_verified_at' => now(),
                 'password' => Hash::make('password'),
-            ]);
+            ]
+        );
+
+        // Crear usuarios de prueba solo si no existen
+        for ($i = 1; $i <= 20; $i++) {
+            User::firstOrCreate(
+                ['email' => 'usuario' . $i . '@example.com'],
+                [
+                    'name' => 'Usuario ' . $i,
+                    'email_verified_at' => $i % 2 === 0 ? now() : null,
+                    'password' => Hash::make('password'),
+                ]
+            );
         }
     }
 }
