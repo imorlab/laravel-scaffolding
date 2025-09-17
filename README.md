@@ -129,7 +129,7 @@ El proyecto está completamente dockerizado para facilitar el desarrollo y despl
 #### 1️⃣ Docker Hub (Más Rápido) ⭐
 ```bash
 # Descargar y ejecutar setup automático
-curl -o docker-hub-setup.sh https://raw.githubusercontent.com/Beon-World-Wide/laravel-scaffolding-2026/main/docker-hub-setup.sh
+curl -o docker-hub-setup.sh https://raw.githubusercontent.com/imorlab/laravel-scaffolding/main/docker-hub-setup.sh
 chmod +x docker-hub-setup.sh
 ./docker-hub-setup.sh
 ```

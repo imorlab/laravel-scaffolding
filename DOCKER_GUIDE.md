@@ -29,7 +29,7 @@ La forma más rápida, sin necesidad de clonar código.
 
 ```bash
 # 1. Descargar script de setup
-curl -o docker-hub-setup.sh https://raw.githubusercontent.com/imorlab/laravel-scaffolding-2025/main/docker-hub-setup.sh
+curl -o docker-hub-setup.sh https://raw.githubusercontent.com/imorlab/laravel-scaffolding/main/docker-hub-setup.sh
 
 # 2. Darle permisos de ejecución
 chmod +x docker-hub-setup.sh
@@ -42,7 +42,7 @@ chmod +x docker-hub-setup.sh
 
 ```cmd
 # 1. Descargar con PowerShell embebido
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/imorlab/laravel-scaffolding-2025/main/docker-hub-setup.sh' -OutFile 'docker-hub-setup.sh'"
+powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/imorlab/laravel-scaffolding/main/docker-hub-setup.sh' -OutFile 'docker-hub-setup.sh'"
 
 # 2. Ejecutar con Git Bash
 "C:\Program Files\Git\bin\bash.exe" docker-hub-setup.sh
