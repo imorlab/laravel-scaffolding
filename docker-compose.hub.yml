@@ -11,7 +11,7 @@ services:
       - DB_USERNAME=root
       - DB_PASSWORD=root_password
       - REDIS_HOST=redis
-      - APP_KEY=base64:Rq/Rr/mDA1w4vXOpjPOAp3U1vyBZXJpVcjRbcMiDWKE=
+      - APP_KEY=base64:YOUR_GENERATED_KEY_HERE
     volumes:
       - app_public:/var/www/public
     depends_on:

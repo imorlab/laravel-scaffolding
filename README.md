@@ -124,7 +124,7 @@ Ejemplo implementado en el dashboard con tabla de usuarios que incluye:
 
 El proyecto está completamente dockerizado para facilitar el desarrollo y despliegue. Incluye servicios para Laravel, MySQL, Redis, Nginx y phpMyAdmin.
 
-### 🚀 3 Formas de Usar Docker
+### 🚀 2 Formas de Usar Docker
 
 #### 1️⃣ Docker Hub (Más Rápido) ⭐
 ```bash
@@ -134,7 +134,8 @@ chmod +x docker-hub-setup.sh
 ./docker-hub-setup.sh
 ```
 **✅ Ideal para**: Demo, testing, producción  
-**⏱️ Tiempo**: 2-3 minutos
+**⏱️ Tiempo**: 2-3 minutos  
+**🔑 Seguridad**: Genera automáticamente una clave de aplicación única
 
 #### 2️⃣ Desarrollo Local  
 ```bash
@@ -145,14 +146,6 @@ cd laravel-scaffolding-2026
 ```
 **✅ Ideal para**: Desarrollo, modificar código  
 **⏱️ Tiempo**: 5-10 minutos
-
-#### 3️⃣ Demo Rápido
-```bash
-# Solo para ver la aplicación (sin BD)
-docker run -p 8001:9000 -e APP_KEY=base64:Rq/Rr/mDA1w4vXOpjPOAp3U1vyBZXJpVcjRbcMiDWKE= imorlab/laravel-scaffolding:latest
-```
-**✅ Ideal para**: Preview rápido  
-**⚠️ Limitación**: Solo páginas estáticas
 
 ### 🌐 Acceso a Servicios
 

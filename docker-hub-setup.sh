@@ -9,6 +9,10 @@ echo "📦 Descargando imagen desde imorlab/laravel-scaffolding..."
 # Descargar la imagen más reciente
 docker pull imorlab/laravel-scaffolding:latest
 
+echo "🔑 Generando clave de aplicación única..."
+APP_KEY=$(docker run --rm imorlab/laravel-scaffolding:latest php artisan key:generate --show)
+echo "✅ Clave generada: ${APP_KEY}"
+
 # Crear directorio de configuración si no existe
 mkdir -p docker-compose/nginx
 
@@ -52,7 +56,7 @@ fi
 
 # Crear archivo docker-compose.hub.yml si no existe
 if [ ! -f "docker-compose.hub.yml" ]; then
-    cat > docker-compose.hub.yml << 'EOF'
+    cat > docker-compose.hub.yml << EOF
 services:
   # Servicio de la aplicación Laravel (usando imagen de Docker Hub)
   app:
@@ -66,7 +70,7 @@ services:
       - DB_USERNAME=root
       - DB_PASSWORD=root_password
       - REDIS_HOST=redis
-      - APP_KEY=base64:Rq/Rr/mDA1w4vXOpjPOAp3U1vyBZXJpVcjRbcMiDWKE=
+      - APP_KEY=${APP_KEY}
     volumes:
       - app_public:/var/www/public
     depends_on:

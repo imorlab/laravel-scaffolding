@@ -15,7 +15,7 @@ Esta guía te explica cómo usar Laravel con Docker de forma simple y rápida.
 - **Nginx** como servidor web
 - **phpMyAdmin** para administrar la BD
 
-## 🚀 3 Formas de Usar
+## 🚀 2 Formas de Usar
 
 ### 1️⃣ Docker Hub (Recomendado) ⭐
 
@@ -50,7 +50,8 @@ powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/i
 
 > 💡 **Recomendación**: Instala [Git para Windows](https://git-scm.com/download/win) y usa **Git Bash** para una mejor experiencia.
 
-✅ **Ventajas**: Rápido, no necesita código fuente, setup automático
+✅ **Ventajas**: Rápido, no necesita código fuente, setup automático  
+🔑 **Seguridad**: Genera automáticamente una clave de aplicación única para cada instalación
 
 ### 2️⃣ Desarrollo Local
 
@@ -66,16 +67,6 @@ cd laravel-scaffolding-2026
 ```
 
 ✅ **Ventajas**: Código editable, hot reload, desarrollo completo
-
-### 3️⃣ Demo Rápido
-
-Solo para ver la aplicación (sin BD):
-
-```bash
-docker run -p 8001:9000 -e APP_KEY=base64:Rq/Rr/mDA1w4vXOpjPOAp3U1vyBZXJpVcjRbcMiDWKE= imorlab/laravel-scaffolding:latest
-```
-
-⚠️ **Limitaciones**: Solo páginas estáticas, sin base de datos
 
 ## 🌐 Acceso
 
