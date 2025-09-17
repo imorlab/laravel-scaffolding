@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Configurar nombre de proyecto consistente
+export COMPOSE_PROJECT_NAME=laravel-scaffolding
+
 echo "🐋 Iniciando Laravel Scaffolding desde Docker Hub..."
 echo "📦 Descargando imagen desde imorlab/laravel-scaffolding..."
 
