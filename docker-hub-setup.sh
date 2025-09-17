@@ -17,14 +17,14 @@ server {
     server_name localhost;
     root /var/www/public;
     index index.php index.html;
-    
+
     # Servir archivos estáticos directamente
     location ~* \.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
         try_files $uri =404;
     }
-    
+
     # Configuración específica para assets de Vite
     location /build/ {
         alias /var/www/public/build/;
@@ -32,11 +32,11 @@ server {
         add_header Cache-Control "public, immutable";
         try_files $uri =404;
     }
-    
+
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
-    
+
     location ~ \.php$ {
         fastcgi_pass app:9000;
         fastcgi_index index.php;
@@ -143,7 +143,9 @@ networks:
   laravel-network:
     driver: bridge
 EOF
-fiecho "🐳 Iniciando servicios con imagen de Docker Hub..."
+fi
+
+echo "🐳 Iniciando servicios con imagen de Docker Hub..."
 docker compose -f docker-compose.hub.yml up -d
 
 echo "⏳ Esperando a que los servicios estén listos..."
